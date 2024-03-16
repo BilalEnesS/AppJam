@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'package:traveler_project/chatPage/chat-page.dart';
+import 'package:traveler_project/traveler.dart';
+
+import 'main2.dart';
+import 'messages.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,103 +13,69 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Gezilecek Yerler',
+      title: 'Anasayfa',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: ChatIconPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  final TextEditingController _controller = TextEditingController();
-  final List<Map<String, String>> _messages = [];
-  static const String _openAiKey = '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';
-
-  Future<void> _sendMessage(String message) async {
-    _messages.add({
-      'role': 'user',
-      'content': message,
-    });
-
-    try {
-      final response = await http.post(
-        Uri.parse('https://api.openai.com/v1/chat/completions'),
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer $_openAiKey',
-        },
-        body: jsonEncode({
-          "model": "gpt-3.5-turbo",
-          "messages": _messages,
-
-        }),
-      );
-
-      if (response.statusCode == 200) {
-        final content = jsonDecode(response.body)['choices'][0]['message']['content'];
-        setState(() {
-          _messages.add({
-            'role': 'assistant',
-            'content': content,
-          });
-        });
-      } else {
-        throw Exception('Failed to send message. Status Code: ${response.statusCode}');
-      }
-    } catch (e) {
-      print('Error: $e');
-    }
-  }
-
+class ChatIconPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gezilecek Yerler'),
+        title: Text('Anasayfa'),
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: _messages.length,
-              itemBuilder: (context, index) {
-                final message = _messages[index];
-                return ListTile(
-                  title: Text(message['content']!),
-                  subtitle: Text(message['role']!),
-                );
-              },
-            ),
+      body: Container(
+        child: Center(
+          child: Text("Anasayfa"),
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.red,
+        unselectedItemColor: Colors.grey.shade600,
+        selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
+        unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
+        type: BottomNavigationBarType.fixed,
+        onTap: (int index) {
+          if (index == 0) {
+            // ChatPage'e yönlendirme
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ChatPage()),
+            );
+          }
+          else if (index == 1) {
+            // Yeni bir boş sayfaya yönlendirme
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MessagesPage(title: "Channels", messages: [],)),
+            );
+          }
+          else if (index == 2) {
+            // Yeni bir boş sayfaya yönlendirme
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ChatDetailPage()),
+            );
+          }
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message),
+            label: "Chats",
+
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: _controller,
-                    decoration: InputDecoration(hintText: 'Bir il yazın...'),
-                  ),
-                ),
-                IconButton(
-                  icon: Icon(Icons.send),
-                  onPressed: () {
-                    final message = _controller.text.trim();
-                    if (message.isNotEmpty) {
-                      _sendMessage("${message} iline ait gezilecek yerleri listeler misin?");
-                      _controller.clear();
-                    }
-                  },
-                ),
-              ],
-            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.group_work),
+            label: "Channels",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_box),
+            label: "Profile",
           ),
         ],
       ),
