@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:traveler_project/chatPage/chat-page.dart';
+import 'package:traveler_project/chatPage/chat_list.dart';
 import 'package:traveler_project/traveler.dart';
 
 import 'main2.dart';
@@ -59,7 +59,7 @@ class ChatIconPage extends StatelessWidget {
             // Yeni bir boş sayfaya yönlendirme
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ChatDetailPage()),
+              MaterialPageRoute(builder: (context) => HomeScreen()),
             );
           }
         },

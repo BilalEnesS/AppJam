@@ -12,6 +12,10 @@ class _ChatPageState extends State<ChatPage> {
   final List<Map<String, String>> _messages = [];
   static const String _openAiKey = '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';
 
+  void _goBack(BuildContext context) {
+    Navigator.of(context).pop();
+  }
+
   Future<void> _sendMessage(String message) async {
     _messages.add({
       'role': 'user',
@@ -28,7 +32,6 @@ class _ChatPageState extends State<ChatPage> {
         body: jsonEncode({
           "model": "gpt-3.5-turbo",
           "messages": _messages,
-
         }),
       );
 
@@ -51,8 +54,28 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff1B202D),
       appBar: AppBar(
-        title: Text('ChatBot Sayfası'),
+        backgroundColor: Color(0xff1B202D),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+        title: Row(
+          children: [
+            CircleAvatar(
+              radius: 20,
+              backgroundImage: AssetImage('assets/images/aifoto.jpg'),
+            ),
+            SizedBox(width: 10),
+            Text(
+              'AI Asistanı',
+              style: TextStyle(color: Colors.white),
+            ),
+          ],
+        ),
       ),
       body: Column(
         children: [
@@ -62,8 +85,14 @@ class _ChatPageState extends State<ChatPage> {
               itemBuilder: (context, index) {
                 final message = _messages[index];
                 return ListTile(
-                  title: Text(message['content']!),
-                  subtitle: Text(message['role']!),
+                  title: Text(
+                    message['content']!,
+                    style: TextStyle(color: Colors.white), // Yazı rengini beyaz yapar
+                  ),
+                  subtitle: Text(
+                    message['role']!,
+                    style: TextStyle(color: Colors.white), // Yazı rengini beyaz yapar
+                  ),
                 );
               },
             ),
@@ -75,15 +104,28 @@ class _ChatPageState extends State<ChatPage> {
                 Expanded(
                   child: TextField(
                     controller: _controller,
-                    decoration: InputDecoration(hintText: 'Bir il yazın...'),
+                    decoration: InputDecoration(
+                      hintText: 'Bir il yazın...',
+                      hintStyle: TextStyle(color: Colors.white), // İpucu metninin rengini beyaz yapar
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white), // Kutu kenar rengini beyaz yapar
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white), // Aktif olmayan kutu kenar rengini beyaz yapar
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white), // Odaklanılan kutu kenar rengini beyaz yapar
+                      ),
+                    ),
+                    style: TextStyle(color: Colors.white), // Metin kutusu rengini beyaz yapar
                   ),
                 ),
                 IconButton(
-                  icon: Icon(Icons.send),
+                  icon: Icon(Icons.send, color: Colors.white),
                   onPressed: () {
                     final message = _controller.text.trim();
                     if (message.isNotEmpty) {
-                      _sendMessage("${message} iline ait gezilecek yerleri listeler misin?");
+                      _sendMessage("$message iline ait gezilecek yerleri listeler misin?");
                       _controller.clear();
                     }
                   },
