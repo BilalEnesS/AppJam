@@ -10,7 +10,7 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   final TextEditingController _controller = TextEditingController();
   final List<Map<String, String>> _messages = [];
-  static const String _openAiKey = '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';
+  static const String _openAiKey = 'api-key';
 
   void _goBack(BuildContext context) {
     Navigator.of(context).pop();
