@@ -187,7 +187,7 @@ class HomeScreen extends StatelessWidget {
                                       fontSize: 17
                                   ),),
                                   SizedBox(width: 130,),
-                                  Text('08:43',style: TextStyle(
+                                  Text('08:38',style: TextStyle(
                                       color: Colors.white70
                                   ),),
                                 ],
@@ -228,7 +228,7 @@ class HomeScreen extends StatelessWidget {
                                       fontSize: 17
                                   ),),
                                   SizedBox(width: 100,),
-                                  Text('08:43',style: TextStyle(
+                                  Text('08:20',style: TextStyle(
                                       color: Colors.white70
                                   ),),
                                 ],
@@ -335,7 +335,7 @@ class HomeScreen extends StatelessWidget {
                                     fontSize: 17
                                 ),),
                                 SizedBox(width: 160,),
-                                Text('23 Mar',style: TextStyle(
+                                Text('20 Mar',style: TextStyle(
                                     color: Colors.white70
                                 ),),
                               ],
@@ -356,7 +356,7 @@ class HomeScreen extends StatelessWidget {
                         CircleAvatar(
                           radius: 30,
                           backgroundImage:
-                          Image.asset('assets/images/foto1.jpg').image,
+                          Image.asset('assets/images/boy1.jpeg').image,
                         ),
                         SizedBox(width: 10,),
                         const Column(
@@ -364,19 +364,19 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Text('James Edlen',style: TextStyle(
+                                Text('Osman Ak',style: TextStyle(
                                     color: Colors.white,
                                     fontFamily: ('Quicksand'),
                                     fontSize: 17
                                 ),),
                                 SizedBox(width: 120,),
-                                Text('23 Mar',style: TextStyle(
+                                Text('19 Mar',style: TextStyle(
                                     color: Colors.white70
                                 ),),
                               ],
                             ),
                             SizedBox(height: 5,),
-                            Text("Were is another tutorial",style: TextStyle(
+                            Text("Naber",style: TextStyle(
                               color: Colors.white70,
                             ),),
                           ],
@@ -391,7 +391,7 @@ class HomeScreen extends StatelessWidget {
                         CircleAvatar(
                           radius: 30,
                           backgroundImage:
-                          Image.asset('assets/images/foto1.jpg').image,
+                          Image.asset('assets/images/boy1.jpeg').image,
                         ),
                         SizedBox(width: 10,),
                         const Column(
@@ -399,19 +399,19 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Text('James Edlen',style: TextStyle(
+                                Text('Burak Eymen',style: TextStyle(
                                     color: Colors.white,
                                     fontFamily: ('Quicksand'),
                                     fontSize: 17
                                 ),),
                                 SizedBox(width: 120,),
-                                Text('23 Mar',style: TextStyle(
+                                Text('17 Mar',style: TextStyle(
                                     color: Colors.white70
                                 ),),
                               ],
                             ),
                             SizedBox(height: 5,),
-                            Text("Were is another tutorial",style: TextStyle(
+                            Text("Geliyorum",style: TextStyle(
                               color: Colors.white70,
                             ),),
                           ],
@@ -426,7 +426,7 @@ class HomeScreen extends StatelessWidget {
                         CircleAvatar(
                           radius: 30,
                           backgroundImage:
-                          Image.asset('assets/images/foto1.jpg').image,
+                          Image.asset('assets/images/girl1.jpg').image,
                         ),
                         SizedBox(width: 10,),
                         const Column(
@@ -434,19 +434,19 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Text('James Edlen',style: TextStyle(
+                                Text('Bengi Su',style: TextStyle(
                                     color: Colors.white,
                                     fontFamily: ('Quicksand'),
                                     fontSize: 17
                                 ),),
                                 SizedBox(width: 120,),
-                                Text('23 Mar',style: TextStyle(
+                                Text('13 Mar',style: TextStyle(
                                     color: Colors.white70
                                 ),),
                               ],
                             ),
                             SizedBox(height: 5,),
-                            Text("Were is another tutorial",style: TextStyle(
+                            Text("Hangi ders var?",style: TextStyle(
                               color: Colors.white70,
                             ),),
                           ],
@@ -461,7 +461,7 @@ class HomeScreen extends StatelessWidget {
                         CircleAvatar(
                           radius: 30,
                           backgroundImage:
-                          Image.asset('assets/images/foto1.jpg').image,
+                          Image.asset('assets/images/girl2.jpg').image,
                         ),
                         SizedBox(width: 10,),
                         const Column(
@@ -469,19 +469,19 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Text('James Edlen',style: TextStyle(
+                                Text('Helen Ark',style: TextStyle(
                                     color: Colors.white,
                                     fontFamily: ('Quicksand'),
                                     fontSize: 17
                                 ),),
                                 SizedBox(width: 120,),
-                                Text('23 Mar',style: TextStyle(
+                                Text('10 Mar',style: TextStyle(
                                     color: Colors.white70
                                 ),),
                               ],
                             ),
                             SizedBox(height: 5,),
-                            Text("Were is another tutorial",style: TextStyle(
+                            Text("WHY?",style: TextStyle(
                               color: Colors.white70,
                             ),),
                           ],

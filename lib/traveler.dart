@@ -87,11 +87,11 @@ class _ChatPageState extends State<ChatPage> {
                 return ListTile(
                   title: Text(
                     message['content']!,
-                    style: TextStyle(color: Colors.white), // Yazı rengini beyaz yapar
+                    style: TextStyle(color: Colors.white),
                   ),
                   subtitle: Text(
                     message['role']!,
-                    style: TextStyle(color: Colors.white), // Yazı rengini beyaz yapar
+                    style: TextStyle(color: Colors.white),
                   ),
                 );
               },
@@ -105,19 +105,19 @@ class _ChatPageState extends State<ChatPage> {
                   child: TextField(
                     controller: _controller,
                     decoration: InputDecoration(
-                      hintText: 'Bir il yazın...',
-                      hintStyle: TextStyle(color: Colors.white), // İpucu metninin rengini beyaz yapar
+                      hintText: 'Nasıl yardımcı olabilirim?',
+                      hintStyle: TextStyle(color: Colors.white),
                       border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white), // Kutu kenar rengini beyaz yapar
+                        borderSide: BorderSide(color: Colors.white),
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white), // Aktif olmayan kutu kenar rengini beyaz yapar
+                        borderSide: BorderSide(color: Colors.white),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white), // Odaklanılan kutu kenar rengini beyaz yapar
+                        borderSide: BorderSide(color: Colors.white),
                       ),
                     ),
-                    style: TextStyle(color: Colors.white), // Metin kutusu rengini beyaz yapar
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
                 IconButton(
@@ -125,7 +125,7 @@ class _ChatPageState extends State<ChatPage> {
                   onPressed: () {
                     final message = _controller.text.trim();
                     if (message.isNotEmpty) {
-                      _sendMessage("$message iline ait gezilecek yerleri listeler misin?");
+                      _sendMessage(message);
                       _controller.clear();
                     }
                   },

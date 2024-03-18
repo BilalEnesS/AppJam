@@ -58,7 +58,7 @@ class ChatScreen extends StatelessWidget {
                     ),
                     child: const Padding(
                       padding: EdgeInsets.all(10.0),
-                      child: Text('I commented on Figma, I want to add\n sjdiw weosjwy cys sow woois ijwdwd wysxta\njsd',style: TextStyle(
+                      child: Text('Merhaba seni yakınlarda gördüm, \nmüsaitsen bugün akşam görüşebiliriz?\nsen ne düşünüyorsun?',style: TextStyle(
                         color: Colors.white,
                       ),),
                     ),
@@ -67,7 +67,7 @@ class ChatScreen extends StatelessWidget {
               ),
               SizedBox(height: 10,),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end, // Mesajları sağa yasla
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
                     decoration:BoxDecoration(
@@ -76,7 +76,7 @@ class ChatScreen extends StatelessWidget {
                     ),
                     child: const Padding(
                       padding: EdgeInsets.all(10.0),
-                      child: Text('I commented on Figma, I want to add\n sjdiw weosjwy',style: TextStyle(
+                      child: Text('Olur bugün müsaitim, oturabiliriz \nsat kaçta görüşeceğiz?',style: TextStyle(
                         color: Colors.white,
                       ),),
                     ),
@@ -91,7 +91,7 @@ class ChatScreen extends StatelessWidget {
                 ),
                 child: const Padding(
                   padding: EdgeInsets.all(10.0),
-                  child: Text('Next Month',style: TextStyle(
+                  child: Text('Akşam saat 8 de görüşelim.',style: TextStyle(
                     color: Colors.white,
                   ),),
                 ),
@@ -105,7 +105,7 @@ class ChatScreen extends StatelessWidget {
               ),
               SizedBox(height: 10,),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end, // Mesajları sağa yasla
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
                     decoration:BoxDecoration(
@@ -114,7 +114,7 @@ class ChatScreen extends StatelessWidget {
                     ),
                     child: const Padding(
                       padding: EdgeInsets.all(10.0),
-                      child: Text('I commented on Figma, I want to add\n sjdiw weosjwy',style: TextStyle(
+                      child: Text('Nasılsın görüşmeyeli iyi misin?\n Müsaitsen bugün de görüşebiliriz?',style: TextStyle(
                         color: Colors.white,
                       ),),
                     ),
@@ -123,7 +123,7 @@ class ChatScreen extends StatelessWidget {
               ),
               SizedBox(height: 10,),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end, // Mesajları sağa yasla
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
                     decoration:BoxDecoration(
